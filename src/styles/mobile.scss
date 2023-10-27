@@ -1,0 +1,175 @@
+@import "./variables.scss";
+
+@media (max-width: $mobile-breakpoint) {
+  body {
+    .layout {
+      padding: 0 50px !important;
+    }
+
+    #mobile-nav {
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: calc(100% - 100px);
+      padding: 20px 50px;
+      background-color: $coral;
+      z-index: 1;
+
+      button {
+        background-color: $coral;
+        border: 0;
+        font-size: 1.5em;
+        color: $slate;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      ul {
+        height: 100vh;
+        list-style: none;
+        padding: 30px 0;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        background-color: rgba($lightcoral, .95);
+        width: 100%;
+
+        li {
+          padding-bottom: 30px;
+          position: relative;
+          top: -100px;
+
+          a,
+          button {
+            font-size: 1.5em;
+            background-color: transparent;
+            border: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 900;
+            font-style: normal;
+            text-decoration: none;
+            color: $slate;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+
+        &.hide-mobile-nav {
+          display: none;
+        }
+
+        &.show-mobile-nav {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    #navigation {
+      display: none;
+    }
+  
+    #hero {
+      padding-top: 106px;
+      height: calc(100vh - 106px);
+      
+      #inner-hero {
+        padding: 20px;
+        height: 75vh;
+  
+        h1 {
+          font-size: 3em;
+        }
+  
+        p {
+          font-size: 1.25em;
+        }
+      }
+    }
+  
+    h2 {
+      font-size: 2em;
+    }
+  
+    #about {
+      padding: 40px 0;
+
+      .flex-container {
+        flex-direction: column;
+  
+        #headshot {
+          width: 80%;
+          padding: 0 0 30px;
+        }
+
+        p {
+          padding: 10px 0;
+        }
+      }
+    }
+
+    #buzzwords {
+      ul {
+        padding-left: 0;
+      }
+    }
+  
+    #process {
+      ul {
+        flex-direction: column;
+  
+        .process-step-box {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  
+    #community {
+      h3 {
+        font-size: 1.75em;
+      }
+  
+      #volunteering {
+        ul {
+          flex-direction: column;
+    
+          li {
+            width: 100%;
+          }
+        }
+      }
+    }
+    footer {
+      .flex {
+      flex-direction: column;
+      align-items: center;
+  
+        .logo {
+          padding-bottom: 10px;
+        }
+
+        #footer-nav {
+          text-align: center;
+          width: 100%;
+
+          li {
+            padding-right: 0;
+          }
+        }
+      }
+
+      #social {
+        width: 70%;
+      }
+    }
+  }
+}

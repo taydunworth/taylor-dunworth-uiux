@@ -1,0 +1,521 @@
+@import "./variables.scss";
+
+// Fonts
+@font-face {
+  font-family: "Meritocracy";
+  src: url("../fonts/Meritocracy-Regular.woff");
+  font-weight: normal;
+}
+
+@font-face {
+    font-family: "Fjord Bold";
+    src: url("../fonts/Fjord-Bold.woff");
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 1em;
+    color: $slate;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+    }
+
+    p {
+        a {
+            font-weight: 600;
+            color: $slate;
+        }
+    }
+
+    button {
+        font-family: brandon-grotesque, sans-serif;
+    }
+
+    #mobile-nav {
+        display: none;
+    }
+
+    .arrow-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-transform: uppercase;
+        background-color: transparent;
+        font-family: brandon-grotesque, sans-serif;
+        letter-spacing: 2px;
+        border: 0;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 1em;
+        text-decoration: none;
+        color: $slate;
+        margin: 0 auto;
+        transition: all .25s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+
+            .down-arrow {
+                transform: translateY(10px);
+            }
+        }
+    
+        .down-arrow {
+            display: block;
+            margin: 0 auto;
+            padding-top: 10px;
+            font-size: 1.3em;
+            transition: all .5s ease-in-out;
+        }
+    }
+
+    hr {
+        border: 1px solid $slate;
+        width: 60px;
+        transform: rotate(90deg);
+        margin: 60px auto;
+    }
+
+    h2 {
+        font-family: "Fjord Bold", serif;
+        text-transform: lowercase;
+        color: $slate;
+        font-size: 2.5em;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 2em;
+        font-weight: 400;
+        padding: 20px 0;
+    }
+
+    h4 {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 1em;
+        color: $slate;
+        padding-bottom: 10px;
+        padding: 5px 0;
+    }
+
+    h5 {
+        font-weight: 700;
+        font-style: normal;
+        font-size: 1em;
+    }
+
+    .script {
+        font-family: "Meritocracy", script;
+        text-transform: lowercase;
+        font-size: 1.5em;
+        color: $slate;
+        font-weight: normal;
+    }
+
+    .logo {
+        font-family: "Meritocracy", script;
+        text-transform: lowercase;
+        font-size: 2.5em;
+        color: $slate;
+        flex-basis: 1;
+    }
+}
+
+#navigation {
+    background-color: $coral;
+    padding: 40px 0;
+
+    div {
+        display: flex;
+        width: calc(100% - 100px);
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 50px;
+    
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            flex-basis: 4;
+
+            li {
+                padding-right: 20px;
+
+                button,
+                a {
+                    text-transform: uppercase;
+                    border: 0;
+                    background-color: transparent;
+                    letter-spacing: 2px;
+                    font-weight: 900;
+                    font-style: normal;
+                    font-size: .8em;
+                    text-decoration: none;
+                    color: $slate;
+                    position: relative;
+                    top: 0;
+                    transition: all .25s ease-in-out;
+                    padding: 5px 5px 10px;
+
+                    &:hover {
+                        cursor: pointer;
+                        top: -5px;
+                    }
+                }
+
+                a {
+                    top: 2px;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+#hero {
+    background-color: $coral;
+    height: calc(100vh - 145px);
+
+    #inner-hero {
+        background-color: $lightcoral;
+        padding: 40px;
+        margin: 0 40px;
+        height: 63vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h1 {
+            font-family: "Fjord Bold", serif;
+            text-transform: lowercase;
+            color: $slate;
+            font-size: 5em;
+        }
+
+        p {
+            width: 70%;
+            font-size: 1.8em;
+            margin: 0 auto;
+        }
+
+        button {
+            display: block;
+            margin-top: 30px;
+            border: 0;
+            background-color: transparent;
+        }
+    }
+}
+
+#about {
+    background-color: $peach;
+    padding: 100px 0;
+
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            text-align: left;
+        }
+
+        #headshot {
+            width: 40%;
+            padding-right: 80px;
+        }
+
+        .arrow-link {
+            padding-top: 30px;
+        }
+    }
+}
+
+#buzzwords {
+    background-color: $lace;
+    padding: 100px 0;
+
+    h2 {
+        padding-bottom: 40px;
+    }
+
+    .pill {
+        background-color: $peach;
+        color: $slate;
+        border-radius: 20px;
+        padding: 5px 15px;
+        display: inline-block;
+        margin: 5px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 900;
+        font-style: normal;
+        font-size: .7em;
+    }
+}
+
+#process {
+    background-color: $peach;
+    padding: 40px 0;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        h3 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 900;
+            font-style: normal;
+            font-size: 1em;
+            color: $slate;
+            padding-bottom: 10px;
+            padding: 5px 0;
+        }
+
+        .process-step-box {
+            width: 75%;
+            margin: 0 auto;
+            padding-bottom: 30px;
+            text-align: center;
+
+            .process-arrow {
+                font-size: 1em;
+                display: block;
+                margin: 0 auto;
+                padding: 40px 0 0;
+            }
+
+            &:last-of-type {
+                .process-arrow {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+#work {
+    background-color: $lace;
+    padding: 40px 0;
+
+    .grid-container {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(10);
+        grid-template-rows: 390px 390px 390px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .portfolio-item {
+            padding: 20px;
+        }
+    }
+}
+
+#community {
+    background-color: $lace;
+    padding: 40px 0;
+
+    #speaking {
+
+        h4 {
+            display: block;
+        }
+
+        a {
+            font-weight: 600;
+            color: $slate;
+        }
+
+        li {
+            border-bottom: 1px solid #e3e1de;
+            padding: 30px 0;
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+    }
+
+    #volunteering {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            li {
+                width: 45%;
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            padding: 20px 0;
+        }
+    }
+
+    h4 {
+        display: inline-block;
+    }
+
+    .current-pill {
+        background-color: $lightcoral;
+        color: $slate;
+        border-radius: 20px;
+        padding: 5px 15px;
+        display: inline-block;
+        margin: 5px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 900;
+        font-style: normal;
+        font-size: .7em;
+        margin-left: 5px;
+        position: relative;
+        top: -3px;
+    }
+
+    .past-pill {
+        background-color: $lace;
+        color: $slate;
+        border-radius: 20px;
+        padding: 5px 15px;
+        display: inline-block;
+        margin: 5px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 900;
+        font-style: normal;
+        font-size: .7em;
+        margin-left: 5px;
+        position: relative;
+        top: -3px;
+    }
+}
+
+footer {
+    padding: 30px 0;
+    background-color: $peach;
+    box-shadow: 0px 0px 50px 0px rgba(227,225,222,.8);
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .flex {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        #footer-nav {
+            display: flex;
+            flex-direction: column;
+
+            li {
+                button,
+                a {
+                    text-transform: uppercase;
+                    background-color: transparent;
+                    letter-spacing: 2px;
+                    font-weight: 900;
+                    font-style: normal;
+                    font-size: .8em;
+                    text-decoration: none;
+                    color: $slate;
+                    border: 0;
+                    transition: all .25s ease-in-out;
+                    padding-left: 0;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: $darkcoral;
+                    }
+                }
+            }
+        }
+    }
+
+    hr {
+        transform: none;
+        width: 100%;
+        margin: 30px 0;
+    }
+
+    #social {
+        display: flex;
+        justify-content: space-between;
+        width: 20%;
+        margin: 0 auto;
+        padding-bottom: 20px;
+
+        li {
+
+            a {
+                font-size: 1.3em;
+                text-decoration: none;
+                color: $slate;
+                position: relative;
+                top: 0;
+                transition: all .25s ease-in-out;
+                padding: 5px 5px 10px;
+
+                &:hover {
+                    cursor: pointer;
+                    top: -5px;
+                }
+            }
+        }
+    }
+
+    p {
+        text-align: center;
+        color: $slate;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 900;
+        font-size: .8em;
+        
+        a {
+            color: $slate;
+            transition: all .25s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                color: $darkcoral;
+            }
+        }
+    }
+}
